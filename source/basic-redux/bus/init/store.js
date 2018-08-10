@@ -18,10 +18,11 @@ const logger = createLogger({
 const preloadedState = JSON.parse(localStorage.getItem('gallery'));
 const devtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 const composeEnhancers = devtools ? devtools : compose;
+const enhancedStore = composeEnhancers(applyMiddleware(logger));
 
 export const store = preloadedState ?
-    createStore(rootReducer, preloadedState, composeEnhancers(applyMiddleware(logger)))
-    : createStore(rootReducer, composeEnhancers(applyMiddleware(logger)));
+    createStore(rootReducer, preloadedState, enhancedStore)
+    : createStore(rootReducer, enhancedStore);
 
 store.subscribe(() => {
     const state = store.getState();

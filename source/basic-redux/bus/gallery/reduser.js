@@ -21,12 +21,17 @@ export const galleryReducer = ( state = initialState, action ) => {
             if (state.selectedPhotoIndex === state.photos.length -1) {
                 return state;
             }
+
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex + 1,
             };
 
         case SHOW_PREVIOUS_PHOTO:
+            if (state.selectedPhotoIndex === 0) {
+                return state;
+            }
+
             return {
                 ...state,
                 selectedPhotoIndex: state.selectedPhotoIndex - 1,
