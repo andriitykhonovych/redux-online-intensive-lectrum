@@ -16,7 +16,6 @@ import { Composer, Catcher, Post } from '../../components';
 import { postsActions } from './../../bus/posts/action';
 
 const mapStateToProps = (state) => {
-    console.log('state', state);
     return {
         posts: state.posts,
     };
