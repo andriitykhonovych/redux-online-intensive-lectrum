@@ -2,9 +2,9 @@
 import { put, apply } from 'redux-saga/effects';
 
 // Instruments
-import {api} from "../../../../REST";
+import {api} from '../../../../REST';
 import { postsActions } from '../../action';
-import { uiActions } from "../../../ui/actions";
+import { uiActions } from '../../../ui/actions';
 
 export function* createPost ({ payload: comment }) {
     try {

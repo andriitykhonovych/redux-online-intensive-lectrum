@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 
-import { postsReducer as posts} from '../bus/posts/reduser';
+import { authReducer as auth} from '../bus/auth/reducer';
 import { uiReducer as ui} from '../bus/ui/reducer';
+import { profileReducer as profile} from '../bus/profile/reducer';
+import { postsReducer as posts} from '../bus/posts/reducer';
 
 export const rootReducer = combineReducers({
-    posts,
+    auth,
     ui,
+    profile,
+    posts,
 });
